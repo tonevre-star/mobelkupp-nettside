@@ -9,7 +9,10 @@
 //   VIPPS_SUBSCRIPTION_KEY      (Ocp-Apim-Subscription-Key fra Vipps-portalen)
 //   VIPPS_MERCHANT_SERIAL_NUMBER
 //   VIPPS_MODE                 "test" eller "production"
-//   PUBLIC_SITE_URL             f.eks. https://mobelkupp.no (ingen trailing slash)
+//   PUBLIC_SITE_URL             f.eks. https://møbelkupp.no (ingen trailing slash)
+//   UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN   (for å huske hva som ble kjøpt, se _kv.js)
+
+import { saveOrderLines } from "./_kv.js";
 
 function vippsBaseUrl() {
   return process.env.VIPPS_MODE === "production"
@@ -39,10 +42,14 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { orderId, amountInOre, description } = req.body;
+    const { orderId, amountInOre, description, lines } = req.body;
 
     if (!orderId || !amountInOre || amountInOre < 100) {
       return res.status(400).json({ error: "Ugyldig ordre (mangler orderId eller for lavt beløp)" });
+    }
+
+    if (Array.isArray(lines) && lines.length > 0) {
+      await saveOrderLines(orderId, lines);
     }
 
     const accessToken = await getVippsAccessToken();

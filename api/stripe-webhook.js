@@ -36,7 +36,7 @@ async function sendOrderEmail(subject, text) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Møbelkupp nettside <ordre@mobelkupp.no>",
+      from: "Møbelkupp nettside <ordre@møbelkupp.no>",
       to: [process.env.NOTIFY_EMAIL],
       subject,
       text,

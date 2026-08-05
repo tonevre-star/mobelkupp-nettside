@@ -174,6 +174,7 @@ function renderCartPage() {
             orderId,
             amountInOre: Math.round(total * 100),
             description: `Møbelkupp-bestilling ${orderId}`,
+            lines: lines.map(l => ({ title: l.product.title, priceNow: l.product.priceNow, qty: l.qty })),
           }),
         });
       } else {
@@ -209,7 +210,7 @@ function sendOrderByEmail(lines, total, orderId) {
     `Hei, jeg vil bestille følgende:%0D%0A%0D%0A${orderLines}%0D%0A%0D%0ATotalt: ${formatKr(total)}%0D%0A` +
     `Ønsket betalingsmåte: ${method}%0D%0APostnummer for levering: ${østfoldPostnr}%0D%0A%0D%0A` +
     `(Automatisk betaling er ikke koblet til ennå, så denne bestillingen sendes som e-post i mellomtiden.)`;
-  window.location.href = `mailto:post@mobelkupp.no?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:post@møbelkupp.no?subject=${subject}&body=${body}`;
 }
 
 document.getElementById("searchToggle").addEventListener("click", () => {

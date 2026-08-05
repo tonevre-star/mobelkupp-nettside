@@ -12,6 +12,18 @@ går da via e-post inntil du fullfører steg 4–7).
 3. Last opp hele mappen (alle filene i denne zip-en) til repoet
    - Enkleste måte uten kommandolinje: bruk "Add file → Upload files" på GitHub-siden og dra inn alt
 
+> **Om domenet (møbelkupp.no med ø):** Alle e-postadresser og lenker i
+> koden bruker nå `møbelkupp.no`. Dette fungerer fint i moderne
+> nettlesere og hos registrarer som Domeneshop/One.com — de håndterer
+> automatisk oversettelsen til den tekniske Punycode-formen bak
+> kulissene. Vær oppmerksom på at enkelte tredjeparts-dashboard (som
+> Resend, når dere verifiserer domenet for e-postutsending) noen ganger
+> ber om domenet i Punycode-format i stedet for med ø — får dere en
+> feilmelding der, prøv å lime inn den tekniske varianten registraren
+> viser. Vi anbefaler fortsatt å registrere `mobelkupp.no` (uten ø) også,
+> og sette den til å viderekoble til `møbelkupp.no` — billig forsikring
+> mot at noen andre snapper opp den varianten.
+
 ## 2. Deploy på Vercel (gratis)
 
 1. Opprett konto på [vercel.com](https://vercel.com) — logg inn med GitHub-kontoen din
@@ -30,7 +42,7 @@ på e-post, så nettsiden er fullt brukelig allerede nå.
 2. Legg til `PUBLIC_SITE_URL` = din Vercel-URL (f.eks. `https://mobelkupp-nettside.vercel.app`), uten skråstrek på slutten
 3. Trykk **Deployments → … → Redeploy** for at endringen skal tas i bruk
 
-*(Når dere kjøper eget domene, f.eks. mobelkupp.no, kobler dere det til under Settings → Domains, og oppdaterer PUBLIC_SITE_URL til det.)*
+*(Når dere kjøper eget domene, f.eks. møbelkupp.no, kobler dere det til under Settings → Domains, og oppdaterer PUBLIC_SITE_URL til det.)*
 
 ## 4. Koble til Vipps (test-modus først)
 
@@ -55,6 +67,24 @@ på e-post, så nettsiden er fullt brukelig allerede nå.
    https://din-vercel-url.vercel.app/api/vipps-callback
    ```
 7. Test: legg en vare i handlekurven på nettsiden, velg Vipps, fullfør — du sendes til Vipps' testmiljø. Vipps-portalen har test-brukere du kan bruke til å simulere betaling.
+
+## 4b. Husk hva kunden kjøpte ved Vipps-betaling (Upstash Redis)
+
+Vipps sitt betalings-API tar bare imot et beløp, ikke en handlekurv med
+varelinjer. For at e-postvarselet skal vise *hvilke* varer som ble kjøpt
+(ikke bare beløpet), trengs en liten, gratis mellomlagring:
+
+1. Opprett gratis konto på [upstash.com](https://upstash.com)
+2. Opprett en ny **Redis**-database (velg gjerne en region i Europa)
+3. Under databasens **REST API**-seksjon, kopier:
+   - `UPSTASH_REDIS_REST_URL`
+   - `UPSTASH_REDIS_REST_TOKEN`
+4. Legg begge inn i Vercel → Environment Variables, redeploy
+
+Uten dette steget fungerer Vipps-betalingen fortsatt helt fint — dere ser
+bare beløpet i e-postvarselet/Vipps-portalen, ikke hvilke produkter som
+ble kjøpt. Stripe (kort) trenger ikke dette — der følger varelinjene
+automatisk med.
 
 ## 5. Koble til Stripe (kortbetaling)
 
@@ -81,12 +111,12 @@ på e-post, så nettsiden er fullt brukelig allerede nå.
 ## 6. E-postvarsel ved ny ordre (valgfritt, men anbefalt)
 
 1. Opprett gratis konto på [resend.com](https://resend.com)
-2. Verifiser domenet deres (mobelkupp.no) etter Resends instruksjoner (noen DNS-oppføringer)
+2. Verifiser domenet deres (møbelkupp.no) etter Resends instruksjoner (noen DNS-oppføringer)
 3. Lag en API-nøkkel under **API Keys**
 4. I Vercel, legg inn:
    ```
    RESEND_API_KEY=re_...
-   NOTIFY_EMAIL=post@mobelkupp.no
+   NOTIFY_EMAIL=post@møbelkupp.no
    ```
 5. Redeploy
 
