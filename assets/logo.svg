@@ -1,0 +1,55 @@
+<svg width="1600" height="500" viewBox="0 0 1600 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .wordmark { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; }
+      .tagline { font-family: Arial, sans-serif; font-weight: 700; letter-spacing: 1px; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="500" fill="#FAF7F2"/>
+
+  <!-- ============ ICON MARK: flat furniture silhouettes, same style as the
+       very first armchair — plain rounded rectangles, front view, no 3D ============ -->
+  <g transform="translate(40,60)">
+
+    <!-- navy backing panel -->
+    <polygon points="60,40 340,40 340,380 60,420" fill="#13315C"/>
+    <!-- orange diagonal band -->
+    <polygon points="60,40 200,40 120,420 60,420" fill="#E8611E"/>
+
+    <g fill="#ffffff">
+
+      <!-- BED (front view: headboard + mattress + legs, stacked like the chair) -->
+      <rect x="90" y="80" width="220" height="45" rx="8"/>
+      <rect x="75" y="125" width="250" height="55" rx="14"/>
+      <rect x="90" y="180" width="14" height="25" rx="4"/>
+      <rect x="296" y="180" width="14" height="25" rx="4"/>
+
+      <!-- ARMCHAIR (same shape as the original: backrest, arms, seat, legs) -->
+      <rect x="155" y="215" width="90" height="100" rx="14"/>
+      <rect x="125" y="260" width="25" height="80" rx="10"/>
+      <rect x="250" y="260" width="25" height="80" rx="10"/>
+      <rect x="135" y="305" width="130" height="50" rx="14"/>
+      <rect x="140" y="355" width="12" height="25" rx="4"/>
+      <rect x="255" y="355" width="12" height="25" rx="4"/>
+    </g>
+
+    <!-- speed / motion stripes below, direct nod to the transport company mark -->
+    <g fill="#13315C">
+      <polygon points="60,440 110,440 90,500 40,500"/>
+      <polygon points="130,440 180,440 160,500 110,500"/>
+      <polygon points="200,440 250,440 230,500 180,500"/>
+      <polygon points="270,440 320,440 300,500 250,500"/>
+    </g>
+  </g>
+
+  <!-- ============ WORDMARK ============ -->
+  <text x="440" y="230" class="wordmark" font-size="120" fill="#13315C">MØBEL<tspan fill="#E8611E">KUPP</tspan></text>
+
+  <!-- ============ TAGLINE BANNER, mirroring "Fast - Safe - Effective" ============ -->
+  <rect x="440" y="270" width="1120" height="60" fill="#E8611E"/>
+  <text x="465" y="311" class="tagline" font-size="32" fill="#ffffff">KVALITET · SMART PRIS · STORT UTVALG</text>
+
+  <!-- descriptor line, now a handwritten accent line for extra warmth/visibility -->
+  <text x="440" y="385" font-family="Caveat" font-size="46" fill="#E8611E">Så fint at gjestene tror du betalte mer</text>
+</svg>

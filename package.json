@@ -1,0 +1,10 @@
+{
+  "name": "mobelkupp-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Møbelkupp nettbutikk — statisk frontend + Vercel serverless-funksjoner for Vipps- og kortbetaling.",
+  "dependencies": {
+    "stripe": "^17.0.0"
+  }
+}

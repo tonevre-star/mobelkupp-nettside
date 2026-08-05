@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Takk for bestillingen! – Møbelkupp</title>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-link" aria-label="Møbelkupp forside">
+      <img src="assets/logo.svg" alt="Møbelkupp" class="logo-img">
+    </a>
+    <div class="header-actions">
+      <a href="cart.html" class="icon-btn cart-btn" aria-label="Handlekurv">
+        <svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 12.2a2 2 0 0 0 2 1.8h8.6a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg>
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="empty-cart">
+  <h1>🎉 Takk for bestillingen!</h1>
+  <p id="orderRef" style="color:var(--ink-soft); margin-bottom:24px;"></p>
+  <p style="color:var(--ink-soft); max-width:44ch; margin:0 auto 28px;">
+    Vi har mottatt betalingen din. Du får en bekreftelse på e-post fra oss med detaljer om henting eller levering.
+  </p>
+  <a href="products.html" class="btn btn-primary">Fortsett å handle</a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-bottom" style="max-width:1280px; margin:0 auto;">
+    <p>© <span id="year"></span> Møbelkupp.</p>
+  </div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const orderId = params.get("orderId");
+  const method = params.get("method");
+  if (orderId) {
+    document.getElementById("orderRef").textContent =
+      `Ordre ${orderId}${method ? " · betalt med " + (method === "vipps" ? "Vipps" : "kort") : ""}`;
+  }
+  // Betalingen er bekreftet (vi kom hit via Vipps/Stripe sin returUrl) — tøm handlekurven
+  saveCart([]);
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Møbelkupp – Brukte møbler til smart pris</title>
+<meta name="description" content="Møbelkupp selger kvalitetssikrede brukte møbler til lave priser. Stort utvalg for studenter, hytteeiere og alle som vil ha fine møbler uten å betale full pris.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ ANNONSE-LINJE ============ -->
+<div class="announce-bar">
+  <div class="announce-track">
+    <span>✓ Spar opptil 80% på møbler</span>
+    <span>✓ Kvalitetssikret og klargjort</span>
+    <span>✓ Levering i hele Østfold</span>
+    <span>✓ Nye varer hver uke</span>
+    <span>✓ Spar opptil 80% på møbler</span>
+    <span>✓ Kvalitetssikret og klargjort</span>
+    <span>✓ Levering i hele Østfold</span>
+    <span>✓ Nye varer hver uke</span>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Åpne meny">
+      <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <a href="index.html" class="logo-link" aria-label="Møbelkupp forside">
+      <img src="assets/logo.svg" alt="Møbelkupp" class="logo-img">
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="products.html?category=stue">Stue</a>
+      <a href="products.html?category=soverom">Soverom</a>
+      <a href="products.html?category=kjokken">Kjøkken &amp; spising</a>
+      <a href="products.html?category=kontor">Hjemmekontor</a>
+      <a href="products.html?category=student">Studentpakker</a>
+      <a href="index.html#om">Om oss</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Søk">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Min konto">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a href="cart.html" class="icon-btn cart-btn" aria-label="Handlekurv">
+        <svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 12.2a2 2 0 0 0 2 1.8h8.6a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg>
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+    </div>
+  </div>
+
+  <form class="search-bar" id="searchBar" action="products.html" method="get">
+    <input type="text" name="q" placeholder="Søk etter sofa, seng, bord …">
+    <button type="submit">Søk</button>
+  </form>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Godt for lommeboka. Bra for miljøet.</p>
+    <h1>Helt nye og pent brukte kupp</h1>
+    <p class="hero-sub">Møbelkupp gjør det enkelt å møblere billig — uten at det skal se billig ut. Kvalitetssikrede møbler til studenter, hytteeiere og alle som vil ha mer for pengene.</p>
+    <div class="hero-cta">
+      <a href="products.html" class="btn btn-primary">Se alle møbler</a>
+      <a href="#selg" class="btn btn-outline">Selg dine møbler</a>
+    </div>
+    <p class="hero-handwritten">Så fint at gjestene tror du betalte mer</p>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-panel">
+      <div class="hero-shape hero-shape-navy"></div>
+      <div class="hero-shape hero-shape-orange"></div>
+      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop" alt="Koselig stue med brukte møbler" class="hero-photo" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- ============ HURTIGKATEGORIER ============ -->
+<section class="quick-cats">
+  <a href="products.html?category=stue" class="quick-cat">
+    <span class="quick-cat-icon">🛋️</span>
+    <span>Stue</span>
+  </a>
+  <a href="products.html?category=soverom" class="quick-cat">
+    <span class="quick-cat-icon">🛏️</span>
+    <span>Soverom</span>
+  </a>
+  <a href="products.html?category=kjokken" class="quick-cat">
+    <span class="quick-cat-icon">🍽️</span>
+    <span>Kjøkken</span>
+  </a>
+  <a href="products.html?category=kontor" class="quick-cat">
+    <span class="quick-cat-icon">💻</span>
+    <span>Hjemmekontor</span>
+  </a>
+  <a href="products.html?category=student" class="quick-cat">
+    <span class="quick-cat-icon">🎓</span>
+    <span>Student</span>
+  </a>
+  <a href="products.html" class="quick-cat">
+    <span class="quick-cat-icon">🏔️</span>
+    <span>Hytte</span>
+  </a>
+</section>
+
+<!-- ============ PRODUKTSEKSJON: NYHETER ============ -->
+<section class="product-section" id="stue">
+  <div class="section-head">
+    <h2>Nyheter | Stue &amp; sittegruppe 🛋️</h2>
+    <a href="products.html?category=stue" class="see-all">Vis alle →</a>
+  </div>
+  <div class="product-carousel" data-carousel="stue"></div>
+</section>
+
+<!-- ============ TILLITSBANNER ============ -->
+<section class="stats-banner">
+  <p class="stats-hand">Du krevde endring, og her er vi 💪</p>
+  <h2>Sammen har vi gitt nytt liv til over <span class="stats-number" data-count="3200">0</span>+ møbler</h2>
+  <p>Det er takket være <strong>deg</strong> 💚</p>
+</section>
+
+<!-- ============ PRODUKTSEKSJON: STUDENT ============ -->
+<section class="product-section" id="student">
+  <div class="section-head">
+    <h2>Populært hos studenter 🎓</h2>
+    <a href="products.html?category=student" class="see-all">Vis alle →</a>
+  </div>
+  <div class="product-carousel" data-carousel="student"></div>
+</section>
+
+<!-- ============ VERDIER ============ -->
+<section class="values">
+  <div class="value-card">
+    <span class="value-icon">✅</span>
+    <h3>Alltid kvalitetssikret</h3>
+    <p>Alle møbler blir sjekket og klargjort før de legges ut.</p>
+  </div>
+  <div class="value-card">
+    <span class="value-icon">🚚</span>
+    <h3>Levering i hele Østfold</h3>
+    <p>Vi samarbeider med Concorde Transport Service AS.</p>
+  </div>
+  <div class="value-card">
+    <span class="value-icon">↩️</span>
+    <h3>14 dager åpent kjøp</h3>
+    <p>Ikke fornøyd? Send det tilbake uten kluss.</p>
+  </div>
+</section>
+
+<!-- ============ PRODUKTSEKSJON: SOVEROM ============ -->
+<section class="product-section" id="soverom">
+  <div class="section-head">
+    <h2>Nyheter | Soverom 🛏️</h2>
+    <a href="products.html?category=soverom" class="see-all">Vis alle →</a>
+  </div>
+  <div class="product-carousel" data-carousel="soverom"></div>
+</section>
+
+<!-- ============ PRODUKTSEKSJON: KJØKKEN & SPISING ============ -->
+<section class="product-section" id="kjokken">
+  <div class="section-head">
+    <h2>Nyheter | Kjøkken &amp; spising 🍽️</h2>
+    <a href="products.html?category=kjokken" class="see-all">Vis alle →</a>
+  </div>
+  <div class="product-carousel" data-carousel="kjokken"></div>
+</section>
+
+<!-- ============ PRODUKTSEKSJON: HJEMMEKONTOR ============ -->
+<section class="product-section" id="kontor">
+  <div class="section-head">
+    <h2>Nyheter | Hjemmekontor 💻</h2>
+    <a href="products.html?category=kontor" class="see-all">Vis alle →</a>
+  </div>
+  <div class="product-carousel" data-carousel="kontor"></div>
+</section>
+
+<!-- ============ BÆREKRAFT-CTA ============ -->
+<section class="sustain-cta" id="om">
+  <div class="sustain-text">
+    <p class="sustain-hand">Ta et klimabevisst valg 🌱</p>
+    <h2>Bli med og gjør en forskjell</h2>
+    <p>Hver gang du velger brukt fremfor nytt, sparer du både lommeboka og planeten. Alle de små valgene kan flytte fjell 🏔️</p>
+    <a href="products.html" class="btn btn-primary">Se alle møbler</a>
+  </div>
+</section>
+
+<!-- ============ SELG DINE MØBLER ============ -->
+<section class="sell-cta" id="selg">
+  <div class="sell-inner">
+    <div class="sell-badge">Selg til oss</div>
+    <h2>Har du møbler du ikke bruker lenger?</h2>
+    <p>Vi henter, kvalitetssikrer og selger dem videre for deg. Enkelt for deg, godt for noen andre.</p>
+    <a href="index.html#kontakt" class="btn btn-outline-light">Få et tilbud</a>
+  </div>
+</section>
+
+<!-- ============ KONTAKT / FOOTER ============ -->
+<footer class="site-footer" id="kontakt">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <img src="assets/logo.svg" alt="Møbelkupp" class="footer-logo">
+      <p>Brukte møbler til smart pris — for studenter, hytteeiere og alle andre som vil ha mer for pengene.</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TT</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <p><strong>Åpningstider</strong><br>Man–Fre: 10–18<br>Lør: 10–15<br>Søn: Stengt</p>
+      <p>E-post: <a href="mailto:post@mobelkupp.no">post@mobelkupp.no</a></p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Hjelp</h4>
+      <ul>
+        <li><a href="#">Ofte stilte spørsmål</a></li>
+        <li><a href="#">Retur og bytte</a></li>
+        <li><a href="#">Kjøpsvilkår</a></li>
+        <li><a href="#">Levering</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Møbelkupp</h4>
+      <ul>
+        <li><a href="index.html#om">Om oss</a></li>
+        <li><a href="index.html#selg">Selg dine møbler</a></li>
+        <li><a href="products.html">Alle møbler</a></li>
+        <li><a href="index.html#kontakt">Kontakt oss</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Møbelkupp. Bygget med kjærlighet 🇳🇴</p>
+    <div class="payment-icons">
+      <span>Vipps</span><span>Visa</span><span>Mastercard</span>
+    </div>
+  </div>
+</footer>
+
+<script src="products-data.js"></script>
+<script src="cart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
